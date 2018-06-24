@@ -8,5 +8,9 @@
 <!-- affiche la balise image SI item.thumb_image N'EST PAS null -->
 	<%#= image_tag item.thumb_image if unless item.thumb_image.nil? %>
 	<%= image_tag item.thumb_image if !item.thumb_image.nil? %>
-	<p><%= link_to "Edit", edit_portfolio_path(item.id) %></p>
+	<%= link_to "Edit", edit_portfolio_path(item.id) %>
+
+	<!-- la "méthode: :delete permet d'indiquer au controleur qu"il faut utiliser l'action destroy. S'il n'y a pas de méthode indiqué, c'est la méthode GET qui est utilisé par défaut-->
+	<%= link_to "Delete item", portfolio_path(item.id), method: :delete, data: { confirm: "Are you sure?" } %>
+
 <% end %>

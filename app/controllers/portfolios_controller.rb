@@ -21,12 +21,14 @@ class PortfoliosController < ApplicationController
 	end
 
 	def edit
+		#Va chercher tout les item portfolio où le Id correspond au paramètre ID reçu via GET
 		@portfolio_item = Portfolio.find(params[:id])
 	end
 
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
+  	#Va chercher tout les item portfolio où le Id correspond au paramètre ID reçu via GET
   	@portfolio_item = Portfolio.find(params[:id])
 
     respond_to do |format|
@@ -39,7 +41,21 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+  	#Va chercher tout les item portfolio où le Id correspond au paramètre ID reçu via GET
   	@portfolio_item = Portfolio.find(params[:id])
+  end
+
+  def destroy
+  	#Va chercher tout les item portfolio où le Id correspond au paramètre ID reçu via GET
+  	@portfolio_item = Portfolio.find(params[:id])
+
+  	#Le portfolio item est détruit
+  	@portfolio_item.destroy
+
+  	#Redirection après destruction
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'This item was successfully destroyed.' }
+    end
   end
 
 end
