@@ -2,7 +2,7 @@
 <%= link_to "Create a new item for portfolio", new_portfolio_path %>
 
 <% @portfolio_item.each do |item| %>
-	<p><%= link_to item.title, portfolio_path(item.id) %></p> <!-- on peut aussi juste écrire link_to item.title, portfolio_path(item)-->
+	<p><%= link_to item.title, portfolio_show_path(item.id) %></p> <!-- on peut aussi juste écrire link_to item.title, portfolio_path(item)-->
 	<p><%= item.subtitle %></p>
 	<p><%= item.body %></p>
 <!-- affiche la balise image SI item.thumb_image N'EST PAS null -->
