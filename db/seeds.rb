@@ -1,6 +1,6 @@
 10.times do |blog|
 	Blog.create!(
-		title: "#{blog}",
+		title: "Mys blog post number #{blog}",
 		body: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
 		doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
 		veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem 
