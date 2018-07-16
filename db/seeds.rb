@@ -1,3 +1,11 @@
+3.times do |topic|
+	Topic.create!(
+		title: "Topic #{topic}"
+	)
+end
+
+puts "3 topic created"
+
 10.times do |blog|
 	Blog.create!(
 		title: "Mys blog post number #{blog}",
@@ -10,7 +18,9 @@
 		dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem 
 		ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum 
 		iure reprehenderit qui in ea voluptate velit esse quam nihil 
-		molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+		molestiae consequatur, 
+		vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+		topic_id: Topic.last.id
 	)
 end
 
@@ -25,10 +35,24 @@ end
 
 puts "5 Skills created"
 
-9.times do |pf|
+8.times do |pf|
 	Portfolio.create!(
 		title: " The Title: #{pf}",
-		subtitle: "My greate services",
+		subtitle: "Ruby on rails",
+		body: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
+		doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
+		veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem 
+		quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui 
+		ratione voluptatem sequi",
+		main_image: "http://via.placeholder.com/600x400",
+		thumb_image: "http://via.placeholder.com/350x200"
+	)
+end
+
+1.times do |pf|
+	Portfolio.create!(
+		title: " The Title: #{pf}",
+		subtitle: "Angular",
 		body: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
 		doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
 		veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem 
