@@ -1,4 +1,6 @@
 class Portfolio < ApplicationRecord
+	include Placeholder
+
 	validates_presence_of :title, :body, :main_image, :thumb_image
 
 	def self.angular
@@ -23,7 +25,7 @@ class Portfolio < ApplicationRecord
 		# On utilise "self" pour cette instance spécifique de Portfolio.create!()
 		# L'opérateur ||= ne "set" une valeur que si la valeur initiale est nulle
 		# ou existe déjà
-		self.main_image ||= "http://via.placeholder.com/600x400"
+		self.main_image ||= Placeholder.image_generator(height:'600', width:'400')
 		self.thumb_image ||= "http://via.placeholder.com/350x200"
 	end
 
